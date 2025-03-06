@@ -1,0 +1,36 @@
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script src="https://dfcapital--devhp2.sandbox.my.salesforce.com/lightning/lightning.out.js"></script>
+</head>
+<body>
+    <div id="lightning-out">
+
+    </div>
+    <script>
+        try{
+            $Lightning.use(
+                "c:QuoteToolOut", // name of the Lightning Out app
+                function () {
+                // Callback once framework and app loaded
+                $Lightning.createComponent(
+                    "c:quoteTool", // top-level component of your app
+                    {}, // attributes to set on the component when created
+                    "lightning-out", // the DOM location to insert the component
+                    function (cmp) {
+                    // callback when component is created and active on the page
+                        console.log('it is createda saksesfoley');
+                    },
+                );
+                },
+                "https://dfcapital--devhp2.sandbox.my.salesforce.com", // Site endpoint
+            );
+        } catch(error){
+            alert(error);
+        }
+    </script>
+</body>
+</html>
